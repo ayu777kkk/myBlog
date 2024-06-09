@@ -9,26 +9,15 @@
     </parent>
 
     <groupId>com.ayulin</groupId>
-    <artifactId>myblog-web</artifactId>
-    <name>myblog-web</name>
-    <description>myblog-web (入口项目，负责博客前台展示相关功能，打包也放在这个模块负责)</description>
-    <dependencies>
-        <dependency>
-            <groupId>com.ayulin</groupId>
-            <artifactId>myblog-module-admin</artifactId>
-            <version>${revision}</version>
-        </dependency>
+    <artifactId>myblog-module-admin</artifactId>
+    <description>myblog-admin (负责管理后台相关功能)</description>
+    <name>myblog-module-admin</name>
 
+    <dependencies>
         <dependency>
             <groupId>com.ayulin</groupId>
             <artifactId>myblog-module-common</artifactId>
             <version>${revision}</version>
-        </dependency>
-
-        <!-- Spring Boot Web 依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <!-- 免写冗余的 Java 样板式代码 -->
@@ -37,20 +26,19 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
         <!-- 单元测试 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-    </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
