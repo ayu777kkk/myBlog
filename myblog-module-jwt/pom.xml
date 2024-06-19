@@ -9,21 +9,45 @@
     </parent>
 
     <groupId>com.ayulin</groupId>
-    <artifactId>myblog-module-admin</artifactId>
-    <description>myblog-admin (负责管理后台相关功能)</description>
-    <name>myblog-module-admin</name>
+    <artifactId>myblog-module-jwt</artifactId>
+    <name>myblog-module-jwt</name>
+    <description>weblog-module-jwt (JWT 模块，管理用户认证、鉴权)</description>
 
     <dependencies>
+        <!-- JWT -->
         <dependency>
-            <groupId>com.ayulin</groupId>
-            <artifactId>myblog-module-common</artifactId>
-            <version>${revision}</version>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- 工具包 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <!-- 通用模块 -->
+        <dependency>
             <groupId>com.ayulin</groupId>
-            <artifactId>myblog-module-jwt</artifactId>
-            <version>${revision}</version>
+            <artifactId>myblog-module-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
         </dependency>
 
         <!-- Spring Security -->
@@ -37,12 +61,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-        </dependency>
-
-        <!-- knife4j -->
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
         </dependency>
 
         <!-- 单元测试 -->

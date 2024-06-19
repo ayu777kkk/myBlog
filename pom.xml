@@ -23,6 +23,7 @@
     <module>myblog-web</module>
     <module>myblog-module-admin</module>
     <module>myblog-module-common</module>
+    <module>myblog-module-jwt</module>
   </modules>
 
   <!-- 版本号统一管理 -->
@@ -36,6 +37,11 @@
     <lombok.version>1.18.28</lombok.version>
     <guava.version>31.1-jre</guava.version>
     <commons-lang3.version>3.12.0</commons-lang3.version>
+    <jackson.version>2.15.2</jackson.version>
+    <knife4j.version>4.3.0</knife4j.version>
+    <mybatis-plus.version>3.5.2</mybatis-plus.version>
+    <p6spy.version>3.9.1</p6spy.version>
+    <jjwt.version>0.11.2</jjwt.version>
 
     <!-- Maven 相关 -->
     <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -58,6 +64,12 @@
         <version>${revision}</version>
       </dependency>
 
+      <dependency>
+        <groupId>com.ayulin</groupId>
+        <artifactId>myblog-module-jwt</artifactId>
+        <version>${revision}</version>
+      </dependency>
+
       <!-- 常用工具库 -->
       <dependency>
         <groupId>com.google.guava</groupId>
@@ -69,6 +81,50 @@
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
         <version>${commons-lang3.version}</version>
+      </dependency>
+
+      <!--   JWT   -->
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-api</artifactId>
+        <version>${jjwt.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-impl</artifactId>
+        <version>${jjwt.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-jackson</artifactId>
+        <version>${jjwt.version}</version>
+      </dependency>
+
+      <!-- knife4j（API 文档工具） -->
+      <dependency>
+        <groupId>com.github.xiaoymin</groupId>
+        <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
+        <version>${knife4j.version}</version>
+      </dependency>
+
+      <!-- Jackson -->
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+
+      <!-- Mybatis Plus -->
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>${mybatis-plus.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>p6spy</groupId>
+        <artifactId>p6spy</artifactId>
+        <version>${p6spy.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
